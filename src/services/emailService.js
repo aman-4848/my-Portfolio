@@ -65,3 +65,12 @@ export const sendEmail = async (formData) => {
 
   return { success: false, message: 'Could not send automatically — opened mail client as fallback.' }
 }
+
+// Fallback function for mailto links
+export const sendEmailFallback = (formData) => {
+  const subject = `Portfolio Contact from ${formData.name}`
+  const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`
+  const mailtoLink = `mailto:amanuelmark747@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`
+  window.open(mailtoLink, '_blank')
+  return { success: false, message: 'Opened mail client as fallback.' }
+}
