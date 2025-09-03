@@ -1,0 +1,11 @@
+````text
+// filepath: C:\Users\hp\Desktop\aman profile\.gitignore
+node_modules/
+dist/
+.build/
+.vite/
+.env
+.env.local
+.DS_Store
+npm-debug.log
+yarn-error.log
