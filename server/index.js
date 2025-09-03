@@ -9,6 +9,18 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+// Root route
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'Portfolio API Server', 
+    status: 'running',
+    endpoints: {
+      health: '/api/health',
+      contact: '/api/contact'
+    }
+  });
+});
+
 app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
 
 app.post('/api/contact', async (req, res) => {
